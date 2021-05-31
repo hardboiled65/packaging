@@ -3,3 +3,4 @@ clean:
 	rm -rf src
 	rm *.tar.gz
 	rm *.pkg.tar.xz
+	rm *.pkg.tar.zst
