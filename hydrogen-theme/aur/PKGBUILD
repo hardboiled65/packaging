@@ -1,5 +1,5 @@
 # Maintainer: Yujŏnja <hardboiled65@gmail.com>
-pkgname=hydrogen
+pkgname=hydrogen-theme
 pkgver=0.1.1
 pkgrel=1
 epoch=
@@ -19,9 +19,9 @@ backup=()
 options=()
 install=
 changelog=
-source=("https://github.com/orbitrc/Hydrogen/archive/refs/tags/v0.1.1-rc2.tar.gz")
+source=("https://github.com/orbitrc/Hydrogen/archive/refs/tags/v0.1.1.tar.gz")
 noextract=()
-md5sums=('338bde259719ef3d78797309013d2559')
+md5sums=('fbe7eb8b72b23da4575098dc20268c91')
 validpgpkeys=()
 
 #prepare() {
@@ -31,7 +31,7 @@ validpgpkeys=()
 
 build() {
 	# cd "$pkgname-$pkgver"
-	cd "Hydrogen-$pkgver-rc2"
+	cd "Hydrogen-$pkgver"
 	DEBUG=0 make
 }
 
@@ -41,7 +41,7 @@ build() {
 #}
 
 package() {
-	cd "Hydrogen-$pkgver-rc2"
+	cd "Hydrogen-$pkgver"
 	make DESTDIR="$srcdir/" install
-	install -D -m 644 "$srcdir/Hydrogen-$pkgver-rc2"/cursors/COPYING-ICONS "${pkgdir}"/usr/share/licenses/hydrogen/cursors/COPYING-ICONS
+	install -D -m 644 "$srcdir/Hydrogen-$pkgver"/cursors/COPYING-ICONS "${pkgdir}"/usr/share/licenses/hydrogen/cursors/COPYING-ICONS
 }
